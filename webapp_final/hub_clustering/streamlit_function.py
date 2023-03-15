@@ -10,8 +10,8 @@ import hub_clustering.params as p
 
 @st.cache_data
 def load_and_prepare():
-    df = pd.read_csv("df_clean.csv")
-    region_dep = pd.read_csv("departements-region.csv", sep=";")
+    df = pd.read_csv("webapp_final/hub_clustering/df_clean.csv")
+    region_dep = pd.read_csv("webapp_final/hub_clustering/departements-region.csv", sep=";")
 
     df["truck_traffic"] = df["TMJA"] * df["ratioPL"] / 100
     df["depPrD"] = df["depPrD"].astype(str)

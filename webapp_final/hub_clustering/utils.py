@@ -17,7 +17,7 @@ warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 def load_data():
     data = pd.read_csv(
-        "donnees_entrepot_location.csv"
+        "webapp_final/hub_clustering/donnees_entrepot_location.csv"
     )
     data["location"] = data.apply(lambda x: (x.latitude, x.longitude), axis=1)
     return data
@@ -25,7 +25,7 @@ def load_data():
 
 def _load_region_transco():
     xls = pd.ExcelFile(
-        "donnees_entrepots.xls"
+        "webapp_final/hub_clustering/donnees_entrepots.xls"
     )
     region = pd.read_excel(xls, "Données régionales")
     region.columns = region.iloc[1]
