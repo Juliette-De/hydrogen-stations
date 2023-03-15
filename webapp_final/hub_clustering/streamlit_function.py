@@ -48,8 +48,8 @@ def load_and_prepare():
 
 @st.cache_data
 def load_and_prepare_location():
-    df = pd.read_csv("hub_clustering/df_clean.csv")
-    region_dep = pd.read_csv("hub_clustering/departements-region.csv", sep=";")
+    df = pd.read_csv("webapp_final/hub_clustering/df_clean.csv")
+    region_dep = pd.read_csv("webapp_final/hub_clustering/departements-region.csv", sep=";")
 
     df["truck_traffic"] = df["TMJA"] * df["ratioPL"] / 100
     df["depPrD"] = df["depPrD"].astype(str)

@@ -4,11 +4,11 @@ import numpy as np
 
 
 def load_profitable_data(year: str = "2030"):
-    return pd.read_csv(f"../data_final/{year}_profitable.csv", index_col=0)
+    return pd.read_csv(f"data_final/{year}_profitable.csv", index_col=0)
 
 
 def load_all_data(year: str = "2030"):
-    return pd.read_csv(f"../data_final/{year}.csv", index_col=0)
+    return pd.read_csv(f"data_final/{year}.csv", index_col=0)
 
 
 def load_and_clean(year="2030"):
