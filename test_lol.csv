@@ -1,0 +1,25 @@
+region_name,count_optimistic,count_moderate,count_conservative,label
+Auvergne-Rhône-Alpes,22.0,11.0,7.0,hub
+Bourgogne-Franche-Comté,12.0,5.0,3.0,hub
+Bretagne,11.0,2.0,1.0,hub
+Centre-Val de Loire,16.0,6.0,6.0,hub
+Grand Est,22.0,7.0,7.0,hub
+Hauts-de-France,31.0,22.0,17.0,hub
+Normandie,10.0,3.0,3.0,hub
+Nouvelle-Aquitaine,14.0,7.0,2.0,hub
+Occitanie,8.0,3.0,1.0,hub
+Pays de la Loire,10.0,6.0,6.0,hub
+Provence-Alpes-Côte d'Azur,6.0,3.0,2.0,hub
+Île-de-France,21.0,11.0,9.0,hub
+Auvergne-Rhône-Alpes,9.0,7.0,3.0,road
+Bourgogne-Franche-Comté,9.0,4.0,1.0,road
+Bretagne,4.0,2.0,1.0,road
+Centre-Val de Loire,7.0,4.0,1.0,road
+Grand Est,8.0,7.0,3.0,road
+Hauts-de-France,7.0,6.0,3.0,road
+Normandie,5.0,1.0,1.0,road
+Nouvelle-Aquitaine,11.0,6.0,2.0,road
+Occitanie,14.0,9.0,3.0,road
+Pays de la Loire,4.0,3.0,1.0,road
+Provence-Alpes-Côte d'Azur,4.0,3.0,1.0,road
+Île-de-France,0.0,0.0,0.0,road
