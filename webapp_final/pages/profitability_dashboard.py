@@ -4,8 +4,6 @@ import numpy as np
 import plotly.express as px
 import sys
 
-sys.path.append("/Users/antoinerazeghi/Documents/Projects/AirLiquide/airliquide/")
-
 
 import hub_clustering.utils as f
 import hub_clustering.profitability as prof

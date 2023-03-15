@@ -3,9 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
-import sys
 
-sys.path.append("/Users/antoinerazeghi/Documents/Projects/AirLiquide/airliquide/")
 
 
 import hub_clustering.params as p

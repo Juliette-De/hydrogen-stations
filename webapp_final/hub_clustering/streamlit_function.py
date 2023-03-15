@@ -5,9 +5,6 @@ import streamlit as st
 from math import inf
 import sys
 
-sys.path.append("/Users/antoinerazeghi/Documents/Projects/AirLiquide/airliquide/")
-
-
 import hub_clustering.params as p
 
 
