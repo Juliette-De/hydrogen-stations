@@ -115,4 +115,4 @@ regions.index.names = ['Region']
 
 regions.loc['Total'] = regions.sum(numeric_only=True)
 
-st.dataframe(regions, height=490)
+st.dataframe(regions, height=495)
