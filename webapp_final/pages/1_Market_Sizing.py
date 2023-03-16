@@ -58,7 +58,7 @@ st.subheader("Number of stations per scenario")
 all_2030 = int(df_all_stations[scenario].sum())
 all_2040 = int(df_all_stations_2040[scenario].sum())
 hub_2030 = int(df_agg_hub_stations[scenario].sum())
-hub_2040 = int(df_agg_hub_stations_2040[scenario].sum()
+hub_2040 = int(df_agg_hub_stations_2040[scenario].sum())
 road_2030 = nt(df_agg_road_stations[scenario].sum())
 road_2040 = int(df_agg_road_stations_2040[scenario].sum())
                
