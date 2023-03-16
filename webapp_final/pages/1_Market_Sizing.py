@@ -123,3 +123,7 @@ fig = px.bar(df_all_stations,
 st.plotly_chart(fig)
 
 st.dataframe(df_all_stations)
+
+st.dataframe(var_name='count_', value_name='stations')
+
+
