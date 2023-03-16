@@ -5,7 +5,7 @@ This application has been developed to visualize the locations where to implemen
 
 ## Quick start
 
-The applicaition is deployed at [this adress](https://pointing9212-airliquide-webapp-finalhome-65qg7b.streamlit.app).
+The application is deployed at [this adress](https://pointing9212-airliquide-webapp-finalhome-65qg7b.streamlit.app).
 
 Alternatively, to run it locally:
 
