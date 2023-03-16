@@ -145,27 +145,24 @@ if up_to_year_o < 2030:
     )
     col2.metric(
         "% of demand met in total",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Air Liquide', up_to_year_o, total_demand_2030
             )
-            + prof.compute_oligopoly_cum_demand(
+            + compute_oligopoly_cum_demand(
                 df_2030, 'Red Team', up_to_year_o, total_demand_2030
             )
         )[:4]
         + "%",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Air Liquide', up_to_year_o, total_demand_2030
             )
-            + prof.compute_oligopoly_cum_demand(
+            + compute_oligopoly_cum_demand(
                 df_2030, 'Red Team', up_to_year_o, total_demand_2030
             )
-            - (
-                prof.compute_oligopoly_cum_demand(
+            - (compute_oligopoly_cum_demand(
                     df_2030, 'Air Liquide', up_to_year_o - 1, total_demand_2030
                 )
-                + prof.compute_oligopoly_cum_demand(
+                + compute_oligopoly_cum_demand(
                     df_2030, 'Red Team', up_to_year_o - 1, total_demand_2030
                 )
             )
@@ -173,41 +170,36 @@ if up_to_year_o < 2030:
     )
     col1.metric(
         "% of demand met by AirLiquide",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Air Liquide', up_to_year_o, total_demand_2030
             )
         )[:4]
         + "%",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Air Liquide', up_to_year_o, total_demand_2030
             )
-            - prof.compute_oligopoly_cum_demand(
+            - compute_oligopoly_cum_demand(
                 df_2030, 'Air Liquide', up_to_year_o - 1, total_demand_2030
             )
         )[:4],
     )
     col2.metric(
         "% of demand met by Red Team",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Red Team', up_to_year_o, total_demand_2030
             )
         )[:4]
         + "%",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 df_2030, 'Red Team', up_to_year_o, total_demand_2030
             )
-            - prof.compute_oligopoly_cum_demand(
+            - compute_oligopoly_cum_demand(
                 df_2030, 'Red Team', up_to_year_o - 1, total_demand_2030
             )
         )[:4],
     )
 
-    st.plotly_chart(
-        prof.visualise_profitability_oligopoly(
+    st.plotly_chart(visualise_profitability_oligopoly(
             df_2030[df_2030.construction_year <= up_to_year_o]
         )
     )
@@ -222,27 +214,26 @@ else:
     )
     col2.metric(
         "% of demand met in total",
-        str(
-            prof.compute_oligopoly_cum_demand(
+        str(compute_oligopoly_cum_demand(
                 final_2040, 'Air Liquide', up_to_year_o, total_demand_2040
             )
-            + prof.compute_oligopoly_cum_demand(
+            + compute_oligopoly_cum_demand(
                 final_2040, 'Red Team', up_to_year_o, total_demand_2040
             )
         )[:4]
         + "%",
         str(
-            prof.compute_oligopoly_cum_demand(
+            compute_oligopoly_cum_demand(
                 final_2040, 'Air Liquide', up_to_year_o, total_demand_2040
             )
-            + prof.compute_oligopoly_cum_demand(
+            + compute_oligopoly_cum_demand(
                 final_2040, 'Red Team', up_to_year_o, total_demand_2040
             )
             - (
-                prof.compute_oligopoly_cum_demand(
+                compute_oligopoly_cum_demand(
                     final_2040, 'Air Liquide', up_to_year_o - 1, total_demand_2040
                 )
-                + prof.compute_oligopoly_cum_demand(
+                + compute_oligopoly_cum_demand(
                     final_2040, 'Red Team', up_to_year_o - 1, total_demand_2040
                 )
             )
@@ -251,16 +242,16 @@ else:
     col1.metric(
         "% of demand met by AirLiquide",
         str(
-            prof.compute_oligopoly_cum_demand(
+            compute_oligopoly_cum_demand(
                 final_2040, 'Air Liquide', up_to_year_o, total_demand_2040
             )
         )[:4]
         + "%",
         str(
-            prof.compute_oligopoly_cum_demand(
+            compute_oligopoly_cum_demand(
                 final_2040, 'Air Liquide', up_to_year_o, total_demand_2040
             )
-            - prof.compute_oligopoly_cum_demand(
+            - compute_oligopoly_cum_demand(
                 final_2040, 'Air Liquide', up_to_year_o - 1, total_demand_2040
             )
         )[:4],
@@ -268,25 +259,21 @@ else:
     col2.metric(
         "% of demand met by Red Team",
         str(
-            prof.compute_oligopoly_cum_demand(
+            compute_oligopoly_cum_demand(
                 final_2040, 'Red Team', up_to_year_o, total_demand_2040
             )
         )[:4]
         + "%",
         str(
-            prof.compute_oligopoly_cum_demand(
+            compute_oligopoly_cum_demand(
                 final_2040, 'Red Team', up_to_year_o, total_demand_2040
             )
-            - prof.compute_oligopoly_cum_demand(
+            - compute_oligopoly_cum_demand(
                 final_2040, 'Red Team', up_to_year_o - 1, total_demand_2040
             )
         )[:4],
     )
-    st.plotly_chart(
-        prof.visualise_profitability_oligopoly(
-            final_2040[final_2040.construction_year <= up_to_year_o]
-        )
-    )
+    st.plotly_chart(visualise_profitability_oligopoly(final_2040[final_2040.construction_year <= up_to_year_o]))
     
     
     
