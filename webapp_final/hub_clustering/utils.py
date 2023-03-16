@@ -241,6 +241,10 @@ def percentage_change(old, new):
 
 
 def visualize_on_map_contrast(df_to_plot, contrast="type"):
+    if contrast=="type":
+        colors={"hub": "green", "road": "blue"}
+    else:
+        colors={"small": "blue", "medium": "green", "large": "orange"}
     fig = px.scatter_mapbox(
         df_to_plot,
         lat="latitude",
@@ -249,7 +253,8 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
         height=800,
         width=800,
         hover_name="type",
-        color=contrast
+        color=contrast,
+        color_discrete_map=colors
     )
 
     #if contrast == "type":
