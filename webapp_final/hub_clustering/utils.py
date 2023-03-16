@@ -15,6 +15,7 @@ from pandas.errors import SettingWithCopyWarning
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 
+@st.cache_data
 def load_data():
     data = pd.read_csv(
         "webapp_final/hub_clustering/donnees_entrepot_location.csv"
@@ -23,6 +24,7 @@ def load_data():
     return data
 
 
+@st.cache_data
 def _load_region_transco():
     xls = pd.ExcelFile(
         "webapp_final/hub_clustering/donnees_entrepots.xls"
@@ -34,6 +36,7 @@ def _load_region_transco():
     return region
 
 
+@st.cache_data
 def filter_dataset(
     dataset, scenario, year="2030", hub_size_thresholds=p.HUB_SIZE_THRESHOLDS
 ):
@@ -41,6 +44,7 @@ def filter_dataset(
     return dataset[dataset["Surface totale"] > hub_size_threshold]
 
 
+@st.cache_data
 def run_kmeans(
     data,
     scenario,
@@ -134,6 +138,7 @@ def run_kmeans(
     return final_dataset, centroids_df
 
 
+@st.cache_data
 def count_centroid_by_region(centroids_df):
     region = _load_region_transco()
     count_by_region = (
@@ -150,6 +155,7 @@ def count_centroid_by_region(centroids_df):
     return count_by_region[["Libellé des régions", "Code région", "count"]]
 
 
+@st.cache_data
 def compute_centroid_size(final_dataset):
     # Number of areas by centroid
     nb_areas_by_centroid = (
@@ -168,10 +174,12 @@ def compute_centroid_size(final_dataset):
     return nb_areas_by_centroid
 
 
+@st.cache_data
 def compute_nb_centroids(centroids_df):
     return len(centroids_df)
 
 
+@st.cache_data
 def visualize_on_map(final_dataset, centroids_df):
     fig = px.scatter_mapbox(
         final_dataset, lat="latitude", lon="longitude", zoom=5, height=800, width=800
@@ -190,6 +198,7 @@ def visualize_on_map(final_dataset, centroids_df):
     return fig
 
 
+@st.cache_data
 def aggregate_hub_stations(
     donnees_entrepot_location: pd.DataFrame,
     year: int = "2030",
@@ -224,6 +233,7 @@ def aggregate_hub_stations(
     return final_df.sort_values(by="region_name").set_index("region_name")
 
 
+@st.cache_data
 def no_division_by_zero(func):
     def wrapper(old, new):
         if old != 0:
@@ -237,6 +247,7 @@ def percentage_change(old, new):
     return str(np.round((new - old) / old * 100)) + "%"
 
 
+@st.cache_data
 def visualize_on_map_contrast(df_to_plot, contrast="type"):
     fig = px.scatter_mapbox(
         df_to_plot,
