@@ -35,6 +35,13 @@ This application offers the following three features, each on one page:
   - 3: Air Liquide arriving after an incumbent operator transformed its network of oil stations into H2.
 
 
+## Organization of the repository
+
+The webapp_final/pages folder contains the application structure.
+
+The working_notebooks folder contains the different notebooks used to explore and analyze the data and perform the clustering of the logistic hubs.
+
+
 ## Background
 
 This project was created for a challenge run by Digital Value, Air Liquide and the Ministry of Ecological Transition.
