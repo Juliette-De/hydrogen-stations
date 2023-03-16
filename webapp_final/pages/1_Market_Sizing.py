@@ -135,7 +135,10 @@ fig = go.Figure(data=[go.Bar(name='Optimistic',
                              x=df_all_stations.index,
                              y=df_all_stations.count_moderate,
                              marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"})),
-                      go.Bar(name='Conservative', x=df_all_stations.index, y=df_all_stations.count_conservative, marker_color='label')
+                      go.Bar(name='Conservative',
+                             x=df_all_stations.index,
+                             y=df_all_stations.count_conservative,
+                             marker_color=marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}))
 ])
 fig.update_layout(barmode='group')
 st.plotly_chart(fig)
