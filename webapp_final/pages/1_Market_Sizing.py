@@ -130,15 +130,18 @@ st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_v
 fig = go.Figure(data=[go.Bar(name='Optimistic',
                              x=df_all_stations.index,
                              y=df_all_stations.count_optimistic,
-                             marker_color=df_all_stations.label.map({"hub": "blue", "road": "lightblue"})),
+                             marker_color=df_all_stations.label.map({"hub": "blue", "road": "lightblue"}),
+                            showlegend=True),
                       go.Bar(name='Moderate',
                              x=df_all_stations.index,
                              y=df_all_stations.count_moderate,
-                             marker_color=df_all_stations.label.map({"hub": "green", "road": "lightgreen"})),
+                             marker_color=df_all_stations.label.map({"hub": "green", "road": "lightgreen"}),
+                            showlegend=True),
                       go.Bar(name='Conservative',
                              x=df_all_stations.index,
                              y=df_all_stations.count_conservative,
-                             marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}))
+                             marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}),
+                            showlegend=True)
 ])
 fig.update_layout(barmode='group')
 st.plotly_chart(fig)
