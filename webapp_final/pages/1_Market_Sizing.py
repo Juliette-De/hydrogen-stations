@@ -119,8 +119,8 @@ melted_stations = df_all_stations.melt(var_name='count_', value_name='stations',
 
 
 fig = px.bar(melted_stations,
-             x=melted_stations.index, y='count_',
-             color='label', barmode='count_',
+             x=melted_stations.index, y='stations', # count_
+             color='label', barmode='group',
              height=400)
 st.plotly_chart(fig)
 
