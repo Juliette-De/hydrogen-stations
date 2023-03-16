@@ -112,3 +112,14 @@ bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
 
 bar_plot_per_region.update_layout(template="plotly", barmode="group", xaxis_tickangle=-45)
 st.plotly_chart(bar_plot_per_region)
+
+
+
+
+import plotly.express as px
+df = px.data.tips()
+fig = px.bar(df_all_stations,
+             x="index", y=['count_optimistic', "count_moderate", 'count_conservative'],
+             color='smoker', barmode='group',
+             height=400)
+st.plotly_chart(fig)
