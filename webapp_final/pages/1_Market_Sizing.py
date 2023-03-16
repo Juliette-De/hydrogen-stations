@@ -17,10 +17,12 @@ st.header("Market Sizing")
 
 #scenario = "count_moderate"
 
-scenario = st.radio("Scenario:",
-                    ('optimistic', 'moderate', 'conservative'),
-                    2, # Setting default scenario to moderate
-                    horizontal=True)
+scenario_displayed = st.radio("Scenario:",
+                              ('optimistic', 'moderate', 'conservative'),
+                              2, # Setting default scenario to moderate
+                              horizontal=True)
+
+scenario = "count_" + scenario_displayed
 
 
 # Loading Hub Stations data
