@@ -91,21 +91,21 @@ bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      marker_color=df_all_stations.label.map({"hub": "blue", "road": "lightblue"}),
                                      legendgroup=1,
                                      legendgrouptitle=dict(text="Optimistic"),
-                                     hoverinfo="label"))
+                                     text='label', hoverinfo='text'))
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_moderate"],
                                      #name="Moderate",
                                      marker_color=df_all_stations.label.map({"hub": "green", "road": "lightgreen"}),
                                      legendgroup=2,
                                      legendgrouptitle=dict(text="Moderate"),
-                                     hoverinfo="label"))
+                                     text='label', hoverinfo='text'))
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_conservative"],
                                      #name="Conservative",
                                      marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}),
                                      legendgroup=3,
                                      legendgrouptitle=dict(text="Conservative"),
-                                     hoverinfo="label"))
+                                     text='label', hoverinfo='text'))
 
 bar_plot_per_region.update_layout(template="plotly", barmode="group", xaxis_tickangle=-45)
 st.plotly_chart(bar_plot_per_region)
