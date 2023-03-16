@@ -115,14 +115,14 @@ st.plotly_chart(bar_plot_per_region)
 
 
 
+melted_stations = df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False)
 
-fig = px.bar(df_all_stations,
-             x=df_all_stations.index, y=['count_optimistic', "count_moderate", 'count_conservative'],
-             color='label', barmode='group',
+
+fig = px.bar(melted_stations,
+             x=melted_stations.index, y=['count_optimistic', "count_moderate", 'count_conservative'],
+             color='label', barmode='count_',
              height=400)
 st.plotly_chart(fig)
-
-st.dataframe(df_all_stations)
 
 st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False))
 
