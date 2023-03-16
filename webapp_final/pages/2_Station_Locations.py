@@ -141,9 +141,12 @@ df_to_plot = pd.concat([hubs_to_plot, roads_to_plot])
 # Mapping
 
 st.subheader("Stations according to type (hubs vs roads)")
-col1_type, col2_type = st.columns(2)
-col1_type.metric("Hub stations", df_to_plot[df_to_plot.type == "hub"].shape[0])
-col2_type.metric("Road stations", df_to_plot[df_to_plot.type == "road"].shape[0])
+col1_type, col2_type, col3_type = st.columns(2)
+hubs = df_to_plot[df_to_plot.type == "hub"].shape[0]
+roads = df_to_plot[df_to_plot.type == "road"].shape[0]
+col1_type.metric("Hub stations", hubs)
+col2_type.metric("Road stations", roads)
+col2_type.metric("**Total number of stations**", roads)
 st.plotly_chart(f.visualize_on_map_contrast(df_to_plot))
 
 
