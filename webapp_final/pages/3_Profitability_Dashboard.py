@@ -101,6 +101,8 @@ df_2030 = pd.read_csv("oligopoly_2030.csv")
 df_2030['propriety'] = np.where(df_2030['propriety'] == 1, 'Air Liquide', 'Red Team')
 
 final_2040 = pd.read_csv("oligopoly_2040.csv")
+df_2040['propriety'] = np.where(df_2030['propriety'] == 1, 'Air Liquide', 'Red Team')
+
 col1, col2 = st.columns(2)
 if up_to_year_o < 2030:
     col1.metric(
