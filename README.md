@@ -5,7 +5,7 @@ This application has been developed to visualize the locations where to implemen
 
 ## Quick start
 
-The applicaition is deployed at [this adress](https://pointing9212-airliquide-webapp-finalhome-65qg7b.streamlit.app/profitability_dashboard).
+The applicaition is deployed at [this adress](https://pointing9212-airliquide-webapp-finalhome-65qg7b.streamlit.app).
 
 To run it locally:
 
