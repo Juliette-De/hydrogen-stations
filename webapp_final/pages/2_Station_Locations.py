@@ -33,7 +33,7 @@ scenario_indexes = {"optimistic": 0, "moderate": 1, "conservative": 2}
 
 scenario = st.radio("Scenario:",
                     ('optimistic', 'moderate', 'conservative'),
-                    2,
+                    1,
                     horizontal=True)
 
 
@@ -41,7 +41,7 @@ col1, col2 = st.columns(2)
 #year = "2030"  # Setting default
 year = st.radio("Year:",
                 ('2030', '2040'),
-                1,
+                0,
                 horizontal=True)
 
 with st.sidebar:
