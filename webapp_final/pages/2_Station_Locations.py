@@ -38,7 +38,7 @@ scenario = st.radio("Scenario:",
 col1, col2 = st.columns(2)
 year = "2030"  # Setting default
 year = st.radio("Year:",
-                ('2030', '2040')
+                ('2030', '2040'))
 
 with st.sidebar:
     height = st.slider(
