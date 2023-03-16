@@ -54,22 +54,24 @@ st.subheader("Number of stations per scenario")
 
 
 # Displaying a few metrics depending on scenario
+
 all_2030 = int(df_all_stations[scenario].sum())
 all_2040 = int(df_all_stations_2040[scenario].sum())
+hub_2030 = int(df_agg_hub_stations[scenario].sum())
+hub_2040 = int(df_agg_hub_stations_2040[scenario].sum()
+road_2030 = nt(df_agg_road_stations[scenario].sum())
+road_2040 = int(df_agg_road_stations_2040[scenario].sum())
+               
 with col1:
     st.metric("**Number of stations in 2030**", all_2030)
     st.metric(**"Number of stations in 2040**",
               all_2040,
               f.percentage_change(all_2030, all_2040))
-hub_2030 = int(df_agg_hub_stations[scenario].sum())
-hub_2040 = int(df_agg_hub_stations_2040[scenario].sum()
 with col2:
     st.metric("Number of hub stations in 2030", hub_2030))
     st.metric("Number of hub stations in 2040",
               hub_2040,
               f.percentage_change(hub_2030, hub_2040))
-road_2030 = nt(df_agg_road_stations[scenario].sum())
-road_2040 = int(df_agg_road_stations_2040[scenario].sum())
 with col3:
     st.metric("Number of road stations in 2030", int(df_agg_road_stations[scenario].sum()))
     st.metric("Number of hub stations in 2040",
