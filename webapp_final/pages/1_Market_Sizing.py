@@ -87,22 +87,25 @@ df_all_stations.sort_index().sort_values(by="label", inplace=True)
 bar_plot_per_region = go.Figure()
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_optimistic"],
-                                     name=df_all_stations.label,
+                                     #name=df_all_stations.label,
                                      marker_color=df_all_stations.label.map({"hub": "blue", "road": "lightblue"}),
+                                     showlegend=True,
                                      legendgroup=1,
                                      legendgrouptitle=dict(text="Optimistic"),
                                      hoverinfo='name'))
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_moderate"],
-                                     name=df_all_stations.label,
+                                     #name=df_all_stations.label,
                                      marker_color=df_all_stations.label.map({"hub": "green", "road": "lightgreen"}),
+                                     showlegend=True,
                                      legendgroup=2,
                                      legendgrouptitle=dict(text="Moderate"),
                                      hoverinfo='name'))
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_conservative"],
-                                     name=df_all_stations.label,
+                                     #name=df_all_stations.label,
                                      marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}),
+                                     showlegend=True,
                                      legendgroup=3,
                                      legendgrouptitle=dict(text="Conservative"),
                                      hoverinfo='name'))
