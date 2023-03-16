@@ -262,6 +262,11 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
     #        ),
     #    )
     fig.update_traces(
+        marker_color=df_to_plot.size_station.map(
+            {"small": "blue", "medium": "green", "large": "orange"}
+        ),
+    )
+    fig.update_traces(
         marker_size=df_to_plot.size_station.map(
             {"small": 6, "medium": 12, "large": 18}
         ),
