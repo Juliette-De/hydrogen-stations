@@ -33,8 +33,8 @@ scenario_indexes = {"optimistic": 0, "moderate": 1, "conservative": 2}
 
 scenario = st.radio("Scenario:",
                     ('optimistic', 'moderate', 'conservative'),
-                    'moderate'
-                   horizontal=True)
+                    'moderate',
+                    horizontal=True)
 
 
 col1, col2 = st.columns(2)
