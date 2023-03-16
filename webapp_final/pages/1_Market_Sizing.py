@@ -63,7 +63,8 @@ hub_2030 = int(df_agg_hub_stations[scenario].sum())
 hub_2040 = int(df_agg_hub_stations_2040[scenario].sum())
 road_2030 = int(df_agg_road_stations[scenario].sum())
 road_2040 = int(df_agg_road_stations_2040[scenario].sum())
-               
+
+col1, col2, col3 = st.columns(3)
 with col1:
     st.metric("**Number of stations in 2030**", all_2030)
     st.metric("**Number of stations in 2040**",
