@@ -137,7 +137,7 @@ roads_to_plot["type"] = "road"
 
 df_to_plot = pd.concat([hubs_to_plot, roads_to_plot])
 df_to_plot.loc[df_to_plot['size_station']=='small', 'size_of_marker'] = 1
-df_to_plot.loc[df_to_plot['size_station']=='medium', 'size_of_marker'] = 5
+df_to_plot.loc[df_to_plot['size_station']=='medium', 'size_of_marker'] = 3
 df_to_plot.loc[df_to_plot['size_station']=='large', 'size_of_marker'] = 10
 
 print(df_to_plot.columns)
