@@ -97,8 +97,11 @@ def visualise_profitability_oligopoly(df):
         height=800,
         width=800,
         size=df.size_station.map({"small": 6, "medium": 12, "large": 18}),
+        color='propriety',
+        color_discrete_map={"Air Liquide": "blue", "Red Team": "red"}
+        
     )
-    fig.update_traces(marker_color=df.propriety.map({0: "red", 1: "blue"}))
+    #fig.update_traces(marker_color=df.propriety.map({0: "red", 1: "blue"}))
     fig.update_layout(mapbox_style="open-street-map")
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     return fig
