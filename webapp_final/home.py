@@ -8,9 +8,9 @@ It offers the following three features, each on one page:
         - their distribution by region;
 - the location and size of the stations;
 - a dashboard of the profitability of each station, according to the following competitive scenarios:
-        1: A single network in France
-        2: Two players entering the market simultaneously (Air Liquide in blue and Red Team in red)
-        3: Air Liquide arriving after an incumbent operator transformed its network of oil stations into H2.""")
+        - 1: A single network in France
+        - 2: Two players entering the market simultaneously (Air Liquide in blue and Red Team in red)
+        - 3: Air Liquide arriving after an incumbent operator transformed its network of oil stations into H2.""")
         
 # def app():
     
