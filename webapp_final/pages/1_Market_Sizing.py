@@ -64,10 +64,9 @@ road_2040 = int(df_agg_road_stations_2040[scenario].sum())
                
 with col1:
     st.metric("**Number of stations in 2030**", all_2030)
-    st.metric(**"Number of stations in 2040**",
+    st.metric("**Number of stations in 2040**",
               all_2040,
-              #'3%'
-             ) #f.percentage_change(all_2030, all_2040))
+              #f.percentage_change(all_2030, all_2040))
 with col2:
     st.metric("Number of hub stations in 2030", hub_2030))
     st.metric("Number of hub stations in 2040",
