@@ -97,7 +97,7 @@ def visualise_profitability_oligopoly(df):
         height=800,
         width=800,
         size=df.size_station.map({"small": 1, "medium": 5, "large": 10}),
-        max_size=12,
+        size_max=12,
         color='propriety',
         color_discrete_map={"Air Liquide": "blue", "Red Team": "red"}
         
