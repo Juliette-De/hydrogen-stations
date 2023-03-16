@@ -82,49 +82,11 @@ with col3:
               f.percentage_change(road_2030, road_2040))
 
 
-## Plot
+### Plot
+
 df_all_stations.sort_index().sort_values(by="label", inplace=True)
-bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
-                                     y=df_all_stations["count_optimistic"],
-                                     #name=df_all_stations.label,
-                                     marker_color=df_all_stations.label.map({"hub": "blue", "road": "lightblue"}),
-                                     showlegend=True,
-                                     legendgroup=1,
-                                     legendgrouptitle=dict(text="Optimistic"),
-                                     hoverinfo='name'))
-bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
-                                     y=df_all_stations["count_moderate"],
-                                     #name=df_all_stations.label,
-                                     marker_color=df_all_stations.label.map({"hub": "green", "road": "lightgreen"}),
-                                     showlegend=True,
-                                     legendgroup=2,
-                                     legendgrouptitle=dict(text="Moderate"),
-                                     hoverinfo='name'))
-bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
-                                     y=df_all_stations["count_conservative"],
-                                     #name=df_all_stations.label,
-                                     marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}),
-                                     showlegend=True,
-                                     legendgroup=3,
-                                     legendgrouptitle=dict(text="Conservative"),
-                                     hoverinfo='name'))
 
-bar_plot_per_region.update_layout(template="plotly", barmode="group", xaxis_tickangle=-45)
-st.plotly_chart(bar_plot_per_region)
-
-
-
-melted_stations = df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False)
-
-
-fig = px.bar(melted_stations,
-             x=melted_stations.index, y='stations', # count_
-             color='count_', barmode='group', #'label'
-             height=400)
-st.plotly_chart(fig)
-
-st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False))
-
+#melted_stations = df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False)
 
 fig = go.Figure(data=[go.Bar(name='Optimistic',
                              x=df_all_stations.index,
@@ -142,3 +104,6 @@ fig = go.Figure(data=[go.Bar(name='Optimistic',
 fig.update_layout(template="plotly", barmode='group') # xaxis_tickangle=-45
 fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)") # xaxis_tickangle=-45
 st.plotly_chart(fig)
+
+
+st.dataframe(df_all_stations)
