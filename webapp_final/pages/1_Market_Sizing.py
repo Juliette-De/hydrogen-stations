@@ -84,7 +84,6 @@ with col3:
 
 ## Plot
 df_all_stations.sort_index().sort_values(by="label", inplace=True)
-bar_plot_per_region = go.Figure()
 bar_plot_per_region.add_trace(go.Bar(x=df_all_stations.index,
                                      y=df_all_stations["count_optimistic"],
                                      #name=df_all_stations.label,
@@ -140,6 +139,6 @@ fig = go.Figure(data=[go.Bar(name='Optimistic',
                              y=df_all_stations.count_conservative,
                              marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}))
 ])
-fig.update_layout(barmode='group')
-fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)")
+fig.update_layout(template="plotly", barmode='group') # xaxis_tickangle=-45
+fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)") # xaxis_tickangle=-45
 st.plotly_chart(fig)
