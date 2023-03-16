@@ -271,6 +271,6 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
             {"small": 6, "medium": 12, "large": 18}
         ),
     )
-    #fig.update_layout(mapbox_style="open-street-map")
+    fig.update_layout(mapbox_style="open-street-map")
     #fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     return fig
