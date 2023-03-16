@@ -111,5 +111,6 @@ st.dataframe(df_all_stations)
 regions = df_all_stations.groupby(['region_name']).sum().rename(columns={"count_optimistic": "Optimistic",
                                                                          "count_moderate": "Moderate",
                                                                          "count_conservative": "Conservative"})
+regions.loc['Total'] = df.sum(numeric_only=True)
 
 st.dataframe(regions)
