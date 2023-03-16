@@ -114,4 +114,4 @@ regions = df_all_stations.groupby(['region_name']).sum().rename(columns={0: "Reg
                                                                          "count_conservative": "Conservative"})
 regions.loc['Total'] = regions.sum(numeric_only=True)
 
-st.dataframe(regions)
+st.dataframe(regions, height=100)
