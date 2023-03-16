@@ -22,7 +22,7 @@ The parameters that allowed us to estimate the demand and therefore the location
 
 
 # Setting default values
-scenario = "Moderate"
+scenario = "moderate"
 height = 6
 replacement_rate = 15
 truck_capacity = 100
@@ -32,7 +32,9 @@ scenario_indexes = {"optimistic": 0, "moderate": 1, "conservative": 2}
 
 
 scenario = st.radio("Scenario:",
-                    ('optimistic', 'moderate', 'conservative'))
+                    ('optimistic', 'moderate', 'conservative'),
+                    'moderate'
+                   horizontal=True)
 
 
 col1, col2 = st.columns(2)
