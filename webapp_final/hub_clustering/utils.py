@@ -248,8 +248,7 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
         zoom=5,
         height=800,
         width=800,
-        hover_name="type",
-        show_legend=True
+        hover_name="type"
     )
 
     if contrast == "type":
