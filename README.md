@@ -25,8 +25,8 @@ streamlit run path/webapp_final/home.py
 ## Features
 
 This application offers the following three features, each on one page:
-- a sizing of the market according to the scenario envisaged - optimistic, moderate or conservative (see the slides for more information), including
-  - the number of stations
+- a sizing of the market according to the scenario envisaged - optimistic, moderate or conservative (see the slides for more information), including:
+  - the number of stations,
   - their distribution by region;
 - the location and size of the stations;
 - a dashboard of the profitability of each station, according to the following competitive scenarios:
