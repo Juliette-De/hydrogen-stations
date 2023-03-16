@@ -106,9 +106,13 @@ fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)") # 
 st.plotly_chart(fig)
 
 
-regions = df_all_stations.groupby(['region_name']).sum().rename(columns={"count_optimistic": "Optimistic",
+st.subheader("Breakdown of the number of stations by region")
+
+regions = df_all_stations.groupby(['region_name']).sum().rename(columns={"region_name": "Region",
+                                                                         "count_optimistic": "Optimistic",
                                                                          "count_moderate": "Moderate",
                                                                          "count_conservative": "Conservative"})
 regions.loc['Total'] = regions.sum(numeric_only=True)
 
 st.dataframe(regions)
+st.write(df.astype(regions))
