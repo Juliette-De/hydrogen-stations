@@ -108,4 +108,8 @@ st.plotly_chart(fig)
 
 st.dataframe(df_all_stations)
 
-st.dataframe(df_all_stations.groupby(['region_name']).sum())
+regions = df_all_stations.groupby(['region_name']).sum()).rename(columns={"count_optimistic": "Optimistic",
+                                                                          "count_moderate": "Moderate",
+                                                                          "count_conservative": "Conservative"}
+
+st.dataframe(regions)
