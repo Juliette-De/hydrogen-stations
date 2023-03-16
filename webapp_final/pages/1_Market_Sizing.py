@@ -115,4 +115,4 @@ regions = df_all_stations.groupby(['region_name']).sum().rename(columns={"region
 regions.loc['Total'] = regions.sum(numeric_only=True)
 
 st.dataframe(regions)
-st.write(df.astype(regions))
+st.write(regions.astype('object'))
