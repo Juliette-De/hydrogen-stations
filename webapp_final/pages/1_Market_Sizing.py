@@ -127,9 +127,9 @@ st.plotly_chart(fig)
 st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False))
 
 
-fig = go.Figure(data=[go.Bar(name='Optimistic', x=df_all_stations.index, y=df_all_stations.count_optimistic, color='label'),
-                      go.Bar(name='Moderate', x=df_all_stations.index, y=df_all_stations.count_moderate, color='label'),
-                      go.Bar(name='Conservative', x=df_all_stations.index, y=df_all_stations.count_conservative, color='label')
+fig = go.Figure(data=[go.Bar(name='Optimistic', x=df_all_stations.index, y=df_all_stations.count_optimistic, marker_color='label'),
+                      go.Bar(name='Moderate', x=df_all_stations.index, y=df_all_stations.count_moderate, marker_color='label'),
+                      go.Bar(name='Conservative', x=df_all_stations.index, y=df_all_stations.count_conservative, marker_color='label')
 ])
 fig.update_layout(barmode='group')
 st.plotly_chart(fig)
