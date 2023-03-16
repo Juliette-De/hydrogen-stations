@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_folium import folium_static
 
-st.markdown("""This application has been developed to visualize the locations where to implement hydrogen stations in 2030 and 2040, according to different parameters and scenarios.
+st.write("""This application has been developed to visualize the locations where to implement hydrogen stations in 2030 and 2040, according to different parameters and scenarios.
 It offers the following three features, each on one page:
 - a sizing of the market according to the scenario envisaged - optimistic, moderate or conservative (see the slides for more information), including:
         - the number of stations,
