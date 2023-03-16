@@ -116,10 +116,10 @@ st.plotly_chart(bar_plot_per_region)
 
 
 
-import plotly.express as px
-df = px.data.tips()
 fig = px.bar(df_all_stations,
              x=df_all_stations.index, y=['count_optimistic', "count_moderate", 'count_conservative'],
              color='label', barmode='group',
              height=400)
 st.plotly_chart(fig)
+
+st.dataframe(df_all_stations)
