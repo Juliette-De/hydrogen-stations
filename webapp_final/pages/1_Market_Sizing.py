@@ -119,7 +119,7 @@ st.plotly_chart(bar_plot_per_region)
 import plotly.express as px
 df = px.data.tips()
 fig = px.bar(df_all_stations,
-             x="index", y=['count_optimistic', "count_moderate", 'count_conservative'],
+             x=index, y=['count_optimistic', "count_moderate", 'count_conservative'],
              color='smoker', barmode='group',
              height=400)
 st.plotly_chart(fig)
