@@ -136,9 +136,9 @@ roads_to_plot = to_map_roads[["latitude", "longitude", "size_station"]]
 roads_to_plot["type"] = "road"
 
 df_to_plot = pd.concat([hubs_to_plot, roads_to_plot])
-df_to_plot[df_to_plot['size']=='small', 'size_of_marker']  = 6
-df_to_plot[df_to_plot['size']=='medium', 'size_of_marker'] = 12
-df_to_plot[df_to_plot['size']=='large', 'size_of_marker'] = 18
+df_to_plot[df_to_plot['size_station']=='small', 'size_of_marker']  = 6
+df_to_plot[df_to_plot['size_station']=='medium', 'size_of_marker'] = 12
+df_to_plot[df_to_plot['size_station']=='large', 'size_of_marker'] = 18
 
 
 # Mapping
