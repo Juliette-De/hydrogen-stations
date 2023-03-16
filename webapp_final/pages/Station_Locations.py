@@ -49,7 +49,7 @@ with st.sidebar:
         "Select average height (in meters) for a warehouse", 5, 15, value=height
     )
     replacement_rate = st.slider(
-        "Select average replacement rate (in days) for a warehouse",
+        "Select average inventory turnover time (in days)",
         7,
         25,
         value=replacement_rate,
