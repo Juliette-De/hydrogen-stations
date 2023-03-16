@@ -138,8 +138,7 @@ fig = go.Figure(data=[go.Bar(name='Optimistic',
                       go.Bar(name='Conservative',
                              x=df_all_stations.index,
                              y=df_all_stations.count_conservative,
-                             marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"})),
-                      labels=
+                             marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}))
 ])
 fig.update_layout(barmode='group')
 fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)")
