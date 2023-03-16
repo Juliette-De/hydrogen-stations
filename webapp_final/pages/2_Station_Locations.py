@@ -146,16 +146,20 @@ hubs = df_to_plot[df_to_plot.type == "hub"].shape[0]
 roads = df_to_plot[df_to_plot.type == "road"].shape[0]
 col1_type.metric("Hub stations", hubs)
 col2_type.metric("Road stations", roads)
-col2_type.metric("**Total number of stations**", roads)
+col3_type.metric("**Total number of stations**", hubs+roads)
 st.plotly_chart(f.visualize_on_map_contrast(df_to_plot))
 
 
 # Mapping
 
 st.subheader("Stations according to size (small, medium, large)")
-col1_size, col2_size, col3_size = st.columns(3)
-col1_size.metric("Small stations", df_to_plot[df_to_plot.size_station == "small"].shape[0])
-col2_size.metric("Medium stations", df_to_plot[df_to_plot.size_station == "medium"].shape[0])
-col3_size.metric("Large stations", df_to_plot[df_to_plot.size_station == "large"].shape[0])
+col1_size, col2_size, col3_size, col4_size = st.columns(4)
+small = df_to_plot[df_to_plot.size_station == "small"].shape[0]
+medium = df_to_plot[df_to_plot.size_station == "medium"].shape[0]
+large = df_to_plot[df_to_plot.size_station == "large"].shape[0]
+col1_size.metric("Small stations", small)
+col2_size.metric("Medium stations", medium)
+col3_size.metric("Large stations", large)
+col4_size.metric("**Total number of stations**", small+medium+large)
 st.plotly_chart(f.visualize_on_map_contrast(df_to_plot, contrast="size"))
 
