@@ -19,7 +19,7 @@ st.header("Market Sizing")
 
 scenario_displayed = st.radio("Scenario:",
                               ('optimistic', 'moderate', 'conservative'),
-                              2, # Setting default scenario to moderate
+                              1, # Setting default scenario to moderate
                               horizontal=True)
 
 scenario = "count_" + scenario_displayed
