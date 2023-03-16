@@ -107,3 +107,5 @@ st.plotly_chart(fig)
 
 
 st.dataframe(df_all_stations)
+
+st.(df_all_stations.groupby(['region_name']).sum())
