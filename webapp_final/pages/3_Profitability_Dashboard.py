@@ -16,8 +16,8 @@ st.header("Profitability")
 
 
 with st.sidebar:
-    up_to_year = st.slider("Select a year (monopoly)", 2025, 2040, 2025) - 1
-    up_to_year_o = st.slider("Select a year (oligopoly)", 2025, 2040, 2025) - 1
+    up_to_year = st.slider("Select a year (monopoly)", 2025, 2040, 2026) - 1
+    up_to_year_o = st.slider("Select a year (oligopoly)", 2025, 2040, 2026) - 1
     up_to_year_l = st.slider("Select a year (latecomer)", 2025, 2040, 2026) - 1
 
 st.subheader("Scenario 1: Monopoly")
@@ -89,9 +89,13 @@ else:
         )
     )
 
+    
+    
+
+### Scenario 2
+
+
 st.subheader("Scenario 2: Oligopoly")
-
-
 
 
 total_demand_2040 = 876257.7037511724
@@ -101,6 +105,33 @@ df_2030['propriety'] = np.where(df_2030['propriety'] == 1, 'Air Liquide', 'Red T
 
 final_2040 = pd.read_csv("oligopoly_2040.csv")
 final_2040['propriety'] = np.where(final_2040['propriety'] == 1, 'Air Liquide', 'Red Team')
+
+
+def compute_oligopoly_cum_demand(df, propriety, up_to_year, total_demand):
+    ours = df[(df.propriety == propriety) & (df.construction_year <= up_to_year)]
+    ours = ours.copy()
+    ours.drop("cumulative_demand", axis=1, inplace=True)
+    ours["cumulative_demand"] = ours.total_h2_sold_per_station.cumsum() / total_demand
+    return np.round(ours.cumulative_demand.max() * 100, 1)
+
+def visualise_profitability_oligopoly(df):
+    fig = px.scatter_mapbox(
+        df,
+        lat="latitude",
+        lon="longitude",
+        zoom=5,
+        height=800,
+        width=800,
+        size=df.size_station.map({"small": 1, "medium": 5, "large": 10}),
+        size_max=12,
+        color='propriety',
+        color_discrete_map={"Air Liquide": "blue", "Red Team": "red"}
+        
+    )
+    fig.update_layout(mapbox_style="open-street-map")
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    return fig
+
 
 col1, col2 = st.columns(2)
 if up_to_year_o < 2030:
@@ -256,8 +287,13 @@ else:
             final_2040[final_2040.construction_year <= up_to_year_o]
         )
     )
-st.subheader("Scenario 3: AirLiquide enters the market after Red Team")
+    
+    
+    
+### Scenario 3
 
+
+st.subheader("Scenario 3: AirLiquide enters the market after Red Team")
 
 
 s3_2030 = pd.read_csv("webapp_final/s3_2030.csv", index_col=0)
@@ -313,8 +349,8 @@ if up_to_year_l < 2030:
         + "%",
     )
     st.image("webapp_final/2030.png")
+    
 else:
-
     col1, col2 = st.columns(2)
     col1.metric(
         "AirLiquide's stations",
