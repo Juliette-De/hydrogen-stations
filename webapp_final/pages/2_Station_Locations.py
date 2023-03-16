@@ -28,27 +28,17 @@ replacement_rate = 15
 truck_capacity = 100
 
 # Converting scenario strings to index
-scenario_indexes = {"count_optimistic": 0, "count_moderate": 1, "count_conservative": 2}
+scenario_indexes = {"Optimistic": 0, "Moderate": 1, "Conservative": 2}
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    if st.button("Optimistic Scenario"):
-        scenario = "count_optimistic"
-with col2:
-    if st.button("Moderate Scenario"):
-        scenario = "count_moderate"
-with col3:
-    if st.button("Conservative Scenario"):
-        scenario = "count_conservative"
+
+scenario = st.radio("Scenario:",
+                    ('Optimistic', 'Moderate', 'Conservative'))
+
 
 col1, col2 = st.columns(2)
 year = "2030"  # Setting default
-with col1:
-    if st.button("2030"):
-        year = "2030"
-with col2:
-    if st.button("2040"):
-        year = "2040"
+year = st.radio("Year:",
+                ('2030', '2040')
 
 with st.sidebar:
     height = st.slider(
@@ -146,18 +136,18 @@ df_to_plot = pd.concat([hubs_to_plot, roads_to_plot])
 # Mapping
 
 st.subheader("Stations according to type (hubs vs roads)")
-col1, col2 = st.columns(2)
-col1.metric("Hub stations", df_to_plot[df_to_plot.type == "hub"].shape[0])
-col2.metric("Road stations", df_to_plot[df_to_plot.type == "road"].shape[0])
+col1_type, col2_type = st.columns(2)
+col1_type.metric("Hub stations", df_to_plot[df_to_plot.type == "hub"].shape[0])
+col2_type.metric("Road stations", df_to_plot[df_to_plot.type == "road"].shape[0])
 st.plotly_chart(f.visualize_on_map_contrast(df_to_plot))
 
 
 # Mapping
 
 st.subheader("Stations according to size (small, medium, large)")
-col1, col2, col3 = st.columns(3)
-col1.metric("Small stations", df_to_plot[df_to_plot.size_station == "small"].shape[0])
-col2.metric("Medium stations", df_to_plot[df_to_plot.size_station == "medium"].shape[0])
-col3.metric("Large stations", df_to_plot[df_to_plot.size_station == "large"].shape[0])
+col1_size, col2_size, col3_size = st.columns(3)
+col1_size.metric("Small stations", df_to_plot[df_to_plot.size_station == "small"].shape[0])
+col2_size.metric("Medium stations", df_to_plot[df_to_plot.size_station == "medium"].shape[0])
+col3_size.metric("Large stations", df_to_plot[df_to_plot.size_station == "large"].shape[0])
 st.plotly_chart(f.visualize_on_map_contrast(df_to_plot, contrast="size"))
 
