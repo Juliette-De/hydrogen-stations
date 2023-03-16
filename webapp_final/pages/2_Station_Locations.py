@@ -28,11 +28,11 @@ replacement_rate = 15
 truck_capacity = 100
 
 # Converting scenario strings to index
-scenario_indexes = {"Optimistic": 0, "Moderate": 1, "Conservative": 2}
+scenario_indexes = {"optimistic": 0, "moderate": 1, "conservative": 2}
 
 
 scenario = st.radio("Scenario:",
-                    ('Optimistic', 'Moderate', 'Conservative'))
+                    ('optimistic', 'moderate', 'conservative'))
 
 
 col1, col2 = st.columns(2)
@@ -79,8 +79,8 @@ to_map_roads.rename({"latD": "latitude", "lonD": "longitude"}, axis=1, inplace=T
 
 hub_data = f.load_data()
 print(scenario)
-df = f.filter_dataset(hub_data, scenario=scenario[6:], year=year)
-final_dataset, centroids_df = f.run_kmeans(df, scenario=scenario[6:], year=year)
+df = f.filter_dataset(hub_data, scenario=scenario, year=year)
+final_dataset, centroids_df = f.run_kmeans(df, scenario=scenario, year=year)
 
 centroids_df.reset_index(inplace=True)
 centroids_df.columns = ["centroid_id", "region", "latitude", "longitude"]
