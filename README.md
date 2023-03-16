@@ -7,7 +7,7 @@ This application has been developed to visualize the locations where to implemen
 
 The applicaition is deployed at [this adress](https://pointing9212-airliquide-webapp-finalhome-65qg7b.streamlit.app).
 
-To run it locally:
+Alternatively, to run it locally:
 
 - Clone this github repository or upload all of its files to the folder where you want to place this project.
 
@@ -30,9 +30,9 @@ This application offers the following three features, each on one page:
   - their distribution by region;
 - the location and size of the stations
 - a dashboard of the profitability of each station, according to the following competitive scenarios:
-  1: A single network in France
-  2: Two players entering the market simultaneously (Air Liquide in blue and Red Team in red)
-  3: An actor arriving after an incumbent operator transformed its network of oil stations into H2
+  - 1: A single network in France
+  - 2: Two players entering the market simultaneously (Air Liquide in blue and Red Team in red)
+  - 3: Air Liquide arriving after an incumbent operator transformed its network of oil stations into H2.
 
 
 ## Background
