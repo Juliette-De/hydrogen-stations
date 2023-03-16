@@ -102,7 +102,7 @@ fig = go.Figure(data=[go.Bar(name='Optimistic',
                              marker_color=df_all_stations.label.map({"hub": "yellow", "road": "lightyellow"}))
 ])
 fig.update_layout(template="plotly", barmode='group') # xaxis_tickangle=-45
-fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)") # xaxis_tickangle=-45
+fig.update_yaxes(title_text = "Number of stations (near hubs + along roads)")
 st.plotly_chart(fig)
 
 
