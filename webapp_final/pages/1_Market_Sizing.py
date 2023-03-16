@@ -124,6 +124,6 @@ st.plotly_chart(fig)
 
 st.dataframe(df_all_stations)
 
-st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_vars=['index', 'label']))
+st.dataframe(df_all_stations.melt(var_name='count_', value_name='stations', id_vars='label', ignore_index=False))
 
 
