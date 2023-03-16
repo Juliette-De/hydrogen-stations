@@ -252,10 +252,10 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
     )
 
     if contrast == "type":
-        fig.add_traces(marker_color=df_to_plot.type.map({"hub": "green", "road": "blue"}),
+        fig.update_traces(marker_color=df_to_plot.type.map({"hub": "green", "road": "blue"}),
                       showlegend=True)
     else:
-        fig.add_traces(
+        fig.update_traces(
             marker_color=df_to_plot.size_station.map({"small": "blue", "medium": "green", "large": "orange"}),
             showlegend=True
         )
