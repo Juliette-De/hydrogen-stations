@@ -161,5 +161,5 @@ col1_size.metric("Small stations", small)
 col2_size.metric("Medium stations", medium)
 col3_size.metric("Large stations", large)
 col4_size.metric("**Total number of stations**", small+medium+large)
-st.plotly_chart(f.visualize_on_map_contrast(df_to_plot, contrast="size"))
+st.plotly_chart(f.visualize_on_map_contrast(df_to_plot, contrast="size_station"))
 
