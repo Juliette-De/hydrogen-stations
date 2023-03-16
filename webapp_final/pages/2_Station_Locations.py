@@ -14,7 +14,7 @@ import hub_clustering.streamlit_function as l
 
 st.header("Stations location to meet 100% of demand")
 
-st.write("""This page presents the distribution of H_2 stations according to the scenario considered (optimistic, moderate or conservative) and the year (2030 or 2040).
+st.markdown("""This page presents the distribution of H_2 stations according to the scenario considered (optimistic, moderate or conservative) and the year (2030 or 2040).
 
 The parameters that allowed us to estimate the demand and therefore the location and size of the stations can be modified, in particular because they are likely to change in the next 10 or 20 years.
 """)
