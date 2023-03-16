@@ -22,7 +22,7 @@ The parameters that allowed us to estimate the demand and therefore the location
 
 
 # Setting default values
-scenario = "count_moderate"
+scenario = "Moderate"
 height = 6
 replacement_rate = 15
 truck_capacity = 100
@@ -78,6 +78,7 @@ to_map_roads.rename({"latD": "latitude", "lonD": "longitude"}, axis=1, inplace=T
 # Loading Hub Stations data
 
 hub_data = f.load_data()
+print(scenario)
 df = f.filter_dataset(hub_data, scenario=scenario[6:], year=year)
 final_dataset, centroids_df = f.run_kmeans(df, scenario=scenario[6:], year=year)
 
