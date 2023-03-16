@@ -140,7 +140,29 @@ df_to_plot.loc[df_to_plot['size_station']=='small', 'size_of_marker'] = 1
 df_to_plot.loc[df_to_plot['size_station']=='medium', 'size_of_marker'] = 5
 df_to_plot.loc[df_to_plot['size_station']=='large', 'size_of_marker'] = 10
 
-print(df_to_plot.columns)
+
+def visualize_on_map_contrast(df_to_plot, contrast="type"):
+    if contrast=="type":
+        colors={"hub": "green", "road": "blue"}
+    else:
+        colors={"small": "blue", "medium": "green", "large": "orange"}
+    
+    fig = px.scatter_mapbox(
+        df_to_plot,
+        lat="latitude",
+        lon="longitude",
+        zoom=5,
+        height=800,
+        width=800,
+        size='size_of_marker',
+        size_max=12,
+        hover_name='type',
+        color=contrast,
+        color_discrete_map=colors,
+    )
+    fig.update_layout(mapbox_style="open-street-map")
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+    return fig
 
 
 # Mapping
@@ -152,7 +174,7 @@ roads = df_to_plot[df_to_plot.type == "road"].shape[0]
 col1_type.metric("Hub stations", hubs)
 col2_type.metric("Road stations", roads)
 col3_type.metric("**Total number of stations**", hubs+roads)
-st.plotly_chart(f.visualize_on_map_contrast(df_to_plot))
+st.plotly_chart(visualize_on_map_contrast(df_to_plot))
 
 
 # Mapping
@@ -166,5 +188,5 @@ col1_size.metric("Small stations", small)
 col2_size.metric("Medium stations", medium)
 col3_size.metric("Large stations", large)
 col4_size.metric("**Total number of stations**", small+medium+large)
-st.plotly_chart(f.visualize_on_map_contrast(df_to_plot, contrast="size_station"))
+st.plotly_chart(visualize_on_map_contrast(df_to_plot, contrast="size_station"))
 
