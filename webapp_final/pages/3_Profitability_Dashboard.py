@@ -37,7 +37,7 @@ propriety = 0
 
 col1, col2 = st.columns(2)
 if up_to_year < 2030:
-    print(df_2030.propriety)
+    print(df_2030['propriety'])
     col1.metric(
         "total number of stations",
         df_2030[df_2030.construction_year <= up_to_year].shape[0],
