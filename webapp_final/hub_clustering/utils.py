@@ -249,19 +249,20 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
         height=800,
         width=800,
         hover_name="type",
+        show_legend=True
     )
 
     if contrast == "type":
-        fig.update_traces(
+        fig.add_traces(
             marker_color=df_to_plot.type.map({"hub": "green", "road": "blue"}),
         )
     else:
-        fig.update_traces(
+        fig.add_traces(
             marker_color=df_to_plot.size_station.map(
                 {"small": "blue", "medium": "green", "large": "orange"}
             ),
         )
-    fig.update_traces(
+    fig.add_traces(
         marker_size=df_to_plot.size_station.map(
             {"small": 6, "medium": 12, "large": 18}
         ),
