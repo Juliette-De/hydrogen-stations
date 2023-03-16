@@ -245,6 +245,7 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
         colors={"hub": "green", "road": "blue"}
     else:
         colors={"small": "blue", "medium": "green", "large": "orange"}
+    
     fig = px.scatter_mapbox(
         df_to_plot,
         lat="latitude",
@@ -252,8 +253,8 @@ def visualize_on_map_contrast(df_to_plot, contrast="type"):
         zoom=5,
         height=800,
         width=800,
-        size="size_station",
-        hover_name="type",
+        size='size_of_marker',
+        hover_name='type',
         color=contrast,
         color_discrete_map=colors,
     )
