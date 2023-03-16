@@ -22,7 +22,7 @@ The parameters that allowed us to estimate the demand and therefore the location
 
 
 # Setting default values
-scenario = "moderate"
+#scenario = "moderate"
 height = 6
 replacement_rate = 15
 truck_capacity = 100
@@ -38,9 +38,11 @@ scenario = st.radio("Scenario:",
 
 
 col1, col2 = st.columns(2)
-year = "2030"  # Setting default
+#year = "2030"  # Setting default
 year = st.radio("Year:",
-                ('2030', '2040'))
+                ('2030', '2040'),
+                1,
+                horizontal=True)
 
 with st.sidebar:
     height = st.slider(
