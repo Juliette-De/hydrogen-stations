@@ -120,6 +120,6 @@ import plotly.express as px
 df = px.data.tips()
 fig = px.bar(df_all_stations,
              x=df_all_stations.index, y=['count_optimistic', "count_moderate", 'count_conservative'],
-             color='smoker', barmode='group',
+             color='label', barmode='group',
              height=400)
 st.plotly_chart(fig)
