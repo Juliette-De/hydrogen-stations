@@ -33,7 +33,6 @@ final_2040 = final_2040.iloc[:160]
 final_2040["profitability threshold"] = final_2040["profitability threshold"].apply(
     lambda x: min(3, x)
 )
-propriety = 0
 
 col1, col2 = st.columns(2)
 if up_to_year < 2030:
@@ -101,7 +100,7 @@ df_2030 = pd.read_csv("oligopoly_2030.csv")
 df_2030['propriety'] = np.where(df_2030['propriety'] == 1, 'Air Liquide', 'Red Team')
 
 final_2040 = pd.read_csv("oligopoly_2040.csv")
-df_2040['propriety'] = np.where(df_2030['propriety'] == 1, 'Air Liquide', 'Red Team')
+df_2040['propriety'] = np.where(df_2040['propriety'] == 1, 'Air Liquide', 'Red Team')
 
 col1, col2 = st.columns(2)
 if up_to_year_o < 2030:
