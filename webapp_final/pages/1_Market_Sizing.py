@@ -108,11 +108,10 @@ st.plotly_chart(fig)
 
 st.subheader("Breakdown of the number of stations by region")
 
-regions = df_all_stations.groupby(['region_name']).sum().rename(columns={"region_name": "Region",
+regions = df_all_stations.groupby(['region_name']).sum().rename(columns={0: "Region",
                                                                          "count_optimistic": "Optimistic",
                                                                          "count_moderate": "Moderate",
                                                                          "count_conservative": "Conservative"})
 regions.loc['Total'] = regions.sum(numeric_only=True)
 
 st.dataframe(regions)
-st.write(regions.astype('object'))
