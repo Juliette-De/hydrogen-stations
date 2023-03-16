@@ -63,14 +63,6 @@ def pareto_with_2030_stations(df_2040, total_demand=None):
     return df, df.total_h2_sold_per_station.sum()
 
 
-def compute_oligopoly_cum_demand(df, propriety, up_to_year, total_demand):
-    ours = df[(df.propriety == propriety) & (df.construction_year <= up_to_year)]
-    ours = ours.copy()
-    ours.drop("cumulative_demand", axis=1, inplace=True)
-    ours["cumulative_demand"] = ours.total_h2_sold_per_station.cumsum() / total_demand
-    return np.round(ours.cumulative_demand.max() * 100, 1)
-
-
 def visualise_profitability(df):
     fig = px.scatter_mapbox(
         df,
@@ -87,25 +79,6 @@ def visualise_profitability(df):
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
     return fig
 
-
-def visualise_profitability_oligopoly(df):
-    fig = px.scatter_mapbox(
-        df,
-        lat="latitude",
-        lon="longitude",
-        zoom=5,
-        height=800,
-        width=800,
-        size=df.size_station.map({"small": 1, "medium": 5, "large": 10}),
-        size_max=12,
-        color='propriety',
-        color_discrete_map={"Air Liquide": "blue", "Red Team": "red"}
-        
-    )
-    #fig.update_traces(marker_color=df.propriety.map({0: "red", 1: "blue"}))
-    fig.update_layout(mapbox_style="open-street-map")
-    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-    return fig
 
 
 def load_s3_data(year: str = "2030", property="ours"):
